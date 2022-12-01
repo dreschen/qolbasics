@@ -1,6 +1,7 @@
-package com.example.examplemod.handler;
+package com.qolbasics.handler;
 
 import com.mojang.logging.LogUtils;
+import com.qolbasics.utils.RelativePositionUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -18,8 +19,7 @@ import org.slf4j.Logger;
 
 import java.util.List;
 
-import static com.example.examplemod.utils.CropUtils.*;
-import static com.example.examplemod.utils.RelativePositionUtils.getRelative3x3Positions;
+import static com.qolbasics.utils.CropUtils.*;
 import static java.lang.Math.abs;
 
 public class PlaceCropHandler {
@@ -45,7 +45,7 @@ public class PlaceCropHandler {
         if(plantable == null || plantable instanceof CactusBlock) {
             return;
         }
-        List<BlockPos> targetPositions = getRelative3x3Positions(event.getPos().above(), player.getLookAngle());
+        List<BlockPos> targetPositions = RelativePositionUtils.getRelative3x3Positions(event.getPos().above(), player.getLookAngle());
         for(BlockPos blockPos : targetPositions){
             if(inHand.isEmpty()) {
                 break;

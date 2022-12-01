@@ -1,4 +1,4 @@
-package com.example.examplemod.utils;
+package com.qolbasics.utils;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;

@@ -1,9 +1,9 @@
-package com.example.examplemod;
+package com.qolbasics;
 
-import com.example.examplemod.config.QOLBasicsConfig;
-import com.example.examplemod.handler.PlaceCropHandler;
-import com.example.examplemod.handler.RightClickHarvestCropHandler;
-import com.example.examplemod.handler.TrampleCropHandler;
+import com.qolbasics.config.QOLBasicsConfig;
+import com.qolbasics.handler.PlaceCropHandler;
+import com.qolbasics.handler.RightClickHarvestCropHandler;
+import com.qolbasics.handler.TrampleCropHandler;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.Item;

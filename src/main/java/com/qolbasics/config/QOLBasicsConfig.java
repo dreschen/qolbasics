@@ -1,4 +1,4 @@
-package com.example.examplemod.config;
+package com.qolbasics.config;
 
 
 import net.minecraftforge.common.ForgeConfigSpec;

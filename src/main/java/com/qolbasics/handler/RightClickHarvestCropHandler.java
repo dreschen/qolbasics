@@ -1,7 +1,8 @@
-package com.example.examplemod.handler;
+package com.qolbasics.handler;
 
-import com.example.examplemod.config.QOLBasicsConfig;
+import com.qolbasics.config.QOLBasicsConfig;
 import com.mojang.logging.LogUtils;
+import com.qolbasics.utils.RelativePositionUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -27,8 +28,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static com.example.examplemod.utils.CropUtils.*;
-import static com.example.examplemod.utils.RelativePositionUtils.getRelative3x3Positions;
+import static com.qolbasics.utils.CropUtils.*;
 import static net.minecraftforge.common.PlantType.*;
 
 public class RightClickHarvestCropHandler {
@@ -45,7 +45,7 @@ public class RightClickHarvestCropHandler {
         }
         ItemStack inHand = player.getItemInHand(InteractionHand.MAIN_HAND);
         List<BlockPos> targetCrops = player.isCrouching() ?
-                Collections.singletonList(event.getPos()) : getRelative3x3Positions(event.getPos(), player.getLookAngle());
+                Collections.singletonList(event.getPos()) : RelativePositionUtils.getRelative3x3Positions(event.getPos(), player.getLookAngle());
         for(BlockPos blockPos : targetCrops) {
             BlockState blockState = level.getBlockState(blockPos);
             mineAndReplace(inHand, level, blockState, blockPos, player);

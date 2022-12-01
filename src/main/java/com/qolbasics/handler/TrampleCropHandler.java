@@ -1,12 +1,12 @@
-package com.example.examplemod.handler;
+package com.qolbasics.handler;
 
-import com.example.examplemod.config.QOLBasicsConfig;
+import com.qolbasics.config.QOLBasicsConfig;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.slf4j.Logger;
 
-import static com.example.examplemod.utils.EntityUtils.isWearingFeatherFalling;
+import static com.qolbasics.utils.EntityUtils.isWearingFeatherFalling;
 
 public class TrampleCropHandler {
     private static final Logger LOGGER = LogUtils.getLogger();

@@ -1,6 +1,6 @@
-package com.example.examplemod.utils;
+package com.qolbasics.utils;
 
-import com.example.examplemod.enums.CardinalDirection;
+import com.qolbasics.enums.CardinalDirection;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;

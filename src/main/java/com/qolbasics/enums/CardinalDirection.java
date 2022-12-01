@@ -1,4 +1,4 @@
-package com.example.examplemod.enums;
+package com.qolbasics.enums;
 
 public enum CardinalDirection {
     NORTH,
