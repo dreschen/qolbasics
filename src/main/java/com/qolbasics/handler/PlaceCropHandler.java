@@ -20,7 +20,6 @@ import org.slf4j.Logger;
 import java.util.List;
 
 import static com.qolbasics.utils.CropUtils.*;
-import static java.lang.Math.abs;
 
 public class PlaceCropHandler {
     private static final Logger LOGGER = LogUtils.getLogger();

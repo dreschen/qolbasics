@@ -3,6 +3,7 @@ package com.qolbasics;
 import com.qolbasics.config.QOLBasicsConfig;
 import com.qolbasics.handler.PlaceCropHandler;
 import com.qolbasics.handler.RightClickHarvestCropHandler;
+import com.qolbasics.handler.TotemDeathHandler;
 import com.qolbasics.handler.TrampleCropHandler;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -56,6 +57,7 @@ public class QOLBasicsMod
         MinecraftForge.EVENT_BUS.register(TrampleCropHandler.class);
         MinecraftForge.EVENT_BUS.register(PlaceCropHandler.class);
         MinecraftForge.EVENT_BUS.register(RightClickHarvestCropHandler.class);
+        MinecraftForge.EVENT_BUS.register(TotemDeathHandler.class);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, QOLBasicsConfig.SPEC, "qol-basics-mod-client.toml");
 
