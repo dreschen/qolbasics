@@ -35,8 +35,6 @@ public class ExpBottleStoreHandler {
         player.totalExperience = 0;
         player.experienceLevel = 0;
         player.experienceProgress = 0;
-        player.getExperienceReward();
-//        player.giveExperiencePoints();
 
 
         //player is holding a glass bottle and this event is enabled;

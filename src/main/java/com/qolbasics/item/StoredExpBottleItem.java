@@ -26,11 +26,11 @@ public class StoredExpBottleItem extends Item {
         ItemStack itemstack = player.getItemInHand(interactionHand);
         level.playSound((Player)null, player.getX(), player.getY(), player.getZ(), SoundEvents.EXPERIENCE_BOTTLE_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
         if (!level.isClientSide) {
-            LazyOptional<StoredExperience> optional = itemstack.getCapability(StoredExperienceProvider.STORED_EXPERIENCE);
-            if(optional.isPresent()){
+            LazyOptional<IStoredExperience> optional = itemstack.getCapability(StoredExperience.INSTANCE);
+            if(optional.resolve().isPresent()){
                 expAmount = optional.resolve().get().getExpAmount();
             }
-            ThrownStoredExperienceBottle thrownstoredexperiencebottle = new ThrownStoredExperienceBottle(level, player);
+            ThrownStoredExperienceBottle thrownstoredexperiencebottle = new ThrownStoredExperienceBottle(level, player, expAmount);
             thrownstoredexperiencebottle.setItem(itemstack);
             thrownstoredexperiencebottle.shootFromRotation(player, player.getXRot(), player.getYRot(), -20.0F, 0.7F, 1.0F);
             level.addFreshEntity(thrownstoredexperiencebottle);

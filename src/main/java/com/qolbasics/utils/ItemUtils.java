@@ -20,9 +20,8 @@ public class ItemUtils {
     }
 
     public static ItemStack getNewStoredExpBottle(int exp) {
-        // I think I want to implement this as a potion or something
         ItemStack storedExpBottleItem = ModItems.StoredExpBottle.get().getDefaultInstance();
-        storedExpBottleItem.getCapability(StoredExperienceProvider.STORED_EXPERIENCE).ifPresent(storedExperience -> storedExperience.setExpAmount(exp));
+        storedExpBottleItem.getCapability(StoredExperience.INSTANCE).ifPresent(storedExperience -> storedExperience.setExpAmount(exp));
         return storedExpBottleItem;
     }
 }

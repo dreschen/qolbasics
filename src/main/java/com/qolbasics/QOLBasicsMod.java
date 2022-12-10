@@ -58,8 +58,6 @@ public class QOLBasicsMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-
-
         ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
@@ -104,20 +102,6 @@ public class QOLBasicsMod
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-        }
-
-        @SubscribeEvent
-        public static void onAttachCapabilitiesItem(AttachCapabilitiesEvent<ItemStack> event) {
-            if(event.getObject() != null && event.getObject().is(ModItems.StoredExpBottle.get())) {
-                if(!event.getObject().getCapability(StoredExperienceProvider.STORED_EXPERIENCE).isPresent()) {
-                    event.addCapability(new ResourceLocation(MODID, "properties"), new StoredExperienceProvider());
-                }
-            }
-        }
-
-        @SubscribeEvent
-        public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
-            event.register(StoredExperience.class);
         }
     }
 }

@@ -24,8 +24,9 @@ public class ThrownStoredExperienceBottle extends ThrowableItemProjectile {
         this.expAmount = expAmount;
     }
 
-    public ThrownStoredExperienceBottle(Level level, double v1, double v2, double v3) {
+    public ThrownStoredExperienceBottle(Level level, double v1, double v2, double v3, int expAmount) {
         super(EntityType.EXPERIENCE_BOTTLE, v1, v2, v3, level);
+        this.expAmount = expAmount;
     }
 
     protected Item getDefaultItem() {
@@ -40,7 +41,7 @@ public class ThrownStoredExperienceBottle extends ThrowableItemProjectile {
         super.onHit(hitResult);
         if (this.level instanceof ServerLevel) {
             this.level.levelEvent(2002, this.blockPosition(), PotionUtils.getColor(Potions.WATER));
-            ExperienceOrb.award((ServerLevel)this.level, this.position(), ;
+            ExperienceOrb.award((ServerLevel)this.level, this.position(), expAmount);
             this.discard();
         }
 
