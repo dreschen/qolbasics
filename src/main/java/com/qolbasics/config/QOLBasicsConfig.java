@@ -11,6 +11,7 @@ public class QOLBasicsConfig {
     public static final ForgeConfigSpec.ConfigValue<Boolean> RIGHT_CLICK_HARVEST;
     public static final ForgeConfigSpec.ConfigValue<Boolean> RIGHT_CLICK_ALLOW_CROP_REPLACEMENT;
     public static final ForgeConfigSpec.ConfigValue<Boolean> TOTEM_ACTIVE_IN_ENTIRE_INVENTORY;
+    public static final ForgeConfigSpec.ConfigValue<Boolean>  BETTER_EXP_STORAGE_ENABLED;
 
     static {
         BUILDER.push("Configs for QOL Basics Mod");
@@ -26,6 +27,9 @@ public class QOLBasicsConfig {
 
         TOTEM_ACTIVE_IN_ENTIRE_INVENTORY = BUILDER.comment("Allows Totem of Undying to reamin active in any inventory slot, not just in your hand.")
                 .define("Totem of Undying works in any inventory slot", true);
+
+        BETTER_EXP_STORAGE_ENABLED = BUILDER.comment("Enables Storage/Retrieval of exp ")
+                .define("Enable BetterExp Management", true);
 
         BUILDER.pop();
         SPEC = BUILDER.build();
