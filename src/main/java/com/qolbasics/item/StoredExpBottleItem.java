@@ -13,8 +13,8 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.common.util.LazyOptional;
 
 public class StoredExpBottleItem extends Item {
-    public StoredExpBottleItem(Item.Properties p_41194_, int expAmount) {
-        super(p_41194_);
+    public StoredExpBottleItem(Item.Properties properties, int expAmount) {
+        super(properties);
     }
 
     public boolean isFoil(ItemStack itemStack) {
@@ -28,7 +28,7 @@ public class StoredExpBottleItem extends Item {
         if (!level.isClientSide) {
             LazyOptional<IStoredExperience> optional = itemstack.getCapability(StoredExperience.INSTANCE);
             if(optional.resolve().isPresent()){
-                expAmount = optional.resolve().get().getExpAmount();
+                expAmount = optional.resolve().get().getExpTotal();
             }
             ThrownStoredExperienceBottle thrownstoredexperiencebottle = new ThrownStoredExperienceBottle(level, player, expAmount);
             thrownstoredexperiencebottle.setItem(itemstack);

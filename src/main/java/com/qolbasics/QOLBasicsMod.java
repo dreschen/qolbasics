@@ -6,6 +6,7 @@ import com.mojang.logging.LogUtils;
 import com.qolbasics.item.ModItems;
 import com.qolbasics.item.StoredExperience;
 import com.qolbasics.item.StoredExperienceProvider;
+import com.qolbasics.network.ModMessages;
 import cpw.mods.modlauncher.EnumerationHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.OptionInstance;
@@ -82,6 +83,7 @@ public class QOLBasicsMod
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
+        ModMessages.register();
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
