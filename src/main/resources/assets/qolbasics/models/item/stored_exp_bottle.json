@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "qolbasics:item/stored_exp_bottle"
+  }
+}
