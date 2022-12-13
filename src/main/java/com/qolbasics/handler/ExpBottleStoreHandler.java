@@ -33,6 +33,8 @@ import static com.qolbasics.utils.ItemUtils.givePlayerItemOrDrop;
 public class ExpBottleStoreHandler {
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    private static final int SHIFT_EXP_AMOUNT = 7;
+
     @SubscribeEvent
     public static void onRightClick(PlayerInteractEvent.RightClickItem event) {
 
@@ -96,6 +98,17 @@ public class ExpBottleStoreHandler {
         }
 
         itemStack.shrink(1);
+        if(player.isCrouching() && expTotal > SHIFT_EXP_AMOUNT) {
+            giveStoredExpBottle(player, SHIFT_EXP_AMOUNT, 1, 0f);
+            // player exp is cleared here, we want to give them back everything except the increment
+            player.giveExperiencePoints(expTotal - SHIFT_EXP_AMOUNT);
+        }
+        else {
+            giveStoredExpBottle(player, expTotal, expLevel, expProgress);
+        }
+    }
+
+    private static void giveStoredExpBottle(Player player, int expTotal, int expLevel, float expProgress) {
         ItemStack expBottle = getNewStoredExpBottle(expTotal, expLevel, expProgress);
         givePlayerItemOrDrop(player, expBottle); // If the players inventory is full, throw it on the ground.
         player.totalExperience = 0;

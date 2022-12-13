@@ -31,6 +31,12 @@ public class ModMessages {
                 .encoder(StoreExpPacket::toBytes)
                 .consumerMainThread(StoreExpPacket::handle)
                 .add();
+
+        net.messageBuilder(ThrowStoredExpBottlePacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(ThrowStoredExpBottlePacket::new)
+                .encoder(ThrowStoredExpBottlePacket::toBytes)
+                .consumerMainThread(ThrowStoredExpBottlePacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {
