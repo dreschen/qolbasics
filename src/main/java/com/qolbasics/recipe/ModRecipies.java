@@ -16,6 +16,9 @@ public class ModRecipies {
     public static final RegistryObject<RecipeSerializer<BetterFireworkRocketRecipe>> BETTER_FIREWORK_SERIALIZER =
             SERIALIZERS.register("better_firework", () -> new SimpleRecipeSerializer<>(BetterFireworkRocketRecipe::new));
 
+    public static final RegistryObject<RecipeSerializer<ModularFireworkRocketRecipe>> MODULAR_FIREWORK_SERIALIZER =
+            SERIALIZERS.register("modular_firework", () -> new SimpleRecipeSerializer<>(ModularFireworkRocketRecipe::new));
+
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }

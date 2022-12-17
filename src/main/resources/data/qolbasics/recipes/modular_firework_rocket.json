@@ -1,0 +1,15 @@
+{
+  "type": "qolbasics:modular_firework",
+  "ingredients": [
+    {
+      "item": "minecraft:gunpowder"
+    },
+    {
+      "item": "minecraft:firework_rocket"
+    }
+  ],
+  "output": {
+    "count": 3,
+    "item": "minecraft:firework_rocket"
+  }
+}
