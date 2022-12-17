@@ -7,6 +7,7 @@ import com.qolbasics.item.ModItems;
 import com.qolbasics.item.StoredExperience;
 import com.qolbasics.item.StoredExperienceProvider;
 import com.qolbasics.network.ModMessages;
+import com.qolbasics.recipe.ModRecipies;
 import cpw.mods.modlauncher.EnumerationHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.OptionInstance;
@@ -60,6 +61,8 @@ public class QOLBasicsMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+
+        ModRecipies.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
